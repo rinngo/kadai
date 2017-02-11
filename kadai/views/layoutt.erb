@@ -1,0 +1,28 @@
+
+<h1>掲示板</h1>
+<form method="post" action="">
+  <p>
+  名前:
+    <input type="text" name="name">
+  </p>
+  <p>
+  本文:
+    <input type="text" name="comment" rows="10" cols="80">
+  </p>
+  <p>
+    <input type="submit" value="コメント">
+  </p>
+</form>
+
+<table>
+  <tr>
+    <th>名前</th>
+    <th>本文</th>
+  </tr>
+  <% @comments.each do|i| %>
+  <tr>
+    <td><%= i[:name] %></td>
+    <td><%= i[:comment] %></td>
+  </tr>
+  <% end %>
+</table>
